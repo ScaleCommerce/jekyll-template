@@ -1,0 +1,11 @@
+{%- include header.html %}
+
+{%- assign sections = site.sections -%}
+{%- for section in sections -%}
+  {%- assign name = section.id | replace: "/sections/","" -%}
+  {%- if page.sections contains name -%}
+    {{ section }}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- include footer.html -%}
